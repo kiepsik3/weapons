@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Damian Rzepka">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/style.css" rel="stylesheet">
+    <title>Weapons</title>
+</head>
+
+<body>
+    <main class="weapon-shop">
+        <div class="shopping-cart" id="shoppingCart">
+        </div>
+
+        <div class="summary-cart">
+            <div class="summary-cart__funds">
+                <span class="funds-label">Available funds</span>
+                <div class="funds-value">
+                    <span class="funds-value__label" id="fundsValue"></span>
+                    <span class="funds-value__icon"></span>
+                </div>
+            </div>
+            <div class="summary-cart__checkout">
+                <span class="checkout-amount">
+                    <span id="checkoutItemsAmount"></span>&nbsp;items in cart
+                </span>
+                <div class="checkout-items" id="checkoutContainer">
+                </div>
+
+                <button class="purchase-button" onclick="purchase()">
+                    <span class="purchase-button__label" id="purchaseValue"></span>
+                    <span class="purchase-button__icon"></span>
+                </button>
+            </div>
+        </div>
+    </main>
+    <script src="js/weapons.js"></script>
+</body>
+
+</html>

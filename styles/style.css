@@ -1,0 +1,217 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/Roboto-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Light';
+  src: url(../fonts/Roboto-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url(../fonts/Roboto-Medium.ttf) format('truetype');
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto Light";
+}
+body {
+  display: flex;
+  justify-content: center;
+}
+.weapon-shop {
+  display: flex;
+  justify-content: space-between;
+  width: 880px;
+  height: 480px;
+  padding: 45px 50px 45px 40px;
+  box-sizing: border-box;
+  background-color: #d7d7d7;
+  align-self: center;
+}
+.shopping-cart {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  flex-basis: 580px;
+}
+.shopping-cart__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 132px;
+  height: 120px;
+  margin-right: 16px;
+  margin-bottom: 18px;
+  flex-basis: calc(25% - 16px);
+  background: #2b2b2b;
+}
+.shopping-cart__item--in-cart .item-price,
+.shopping-cart__item--in-cart .item-price:hover {
+  background-color: #ff9900;
+}
+.shopping-cart__item--too-expensive .item-price,
+.shopping-cart__item--too-expensive .item-price:hover {
+  background-color: #ff3300;
+  cursor: not-allowed;
+}
+.shopping-cart__item--owned .item-price {
+  background-color: #ffffff;
+}
+.shopping-cart__item--owned .item-price__label {
+  color: #2b2b2b;
+}
+.shopping-cart__item--owned .item-price:hover {
+  background-color: #ffffff;
+}
+.shopping-cart__item--owned .item-price:hover__label {
+  color: #2b2b2b;
+}
+.item-name {
+  font-size: 11px;
+  color: #ffffff;
+  margin-top: 5px;
+}
+.item-new {
+  align-self: flex-start;
+  position: absolute;
+  font-family: "Roboto Medium";
+  font-size: 10px;
+  margin-top: 22px;
+  padding: 3px 7px;
+  background-color: #ffcc00;
+}
+.item-img {
+  margin-top: auto;
+}
+.item-price {
+  display: flex;
+  justify-content: center;
+  align-self: stretch;
+  margin-top: auto;
+  padding: 7px 0;
+  border: none;
+  outline: none;
+  background-color: #787878;
+  transition: background-color 0.3s;
+}
+.item-price:hover {
+  cursor: pointer;
+  background: #545454;
+}
+.item-price__label {
+  font-size: 13px;
+  color: #ffffff;
+  line-height: 1;
+}
+.item-price__icon {
+  display: inline-block;
+  width: 8px;
+  height: 12px;
+  background-color: #ffcc00;
+  margin-left: 5px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px black;
+}
+.summary-cart {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 185px;
+}
+.summary-cart__funds {
+  text-align: right;
+  font-family: "Roboto";
+}
+.summary-cart__funds .funds-label {
+  font-size: 12px;
+}
+.summary-cart__funds .funds-value {
+  margin-top: 3px;
+}
+.summary-cart__funds .funds-value__label {
+  font-size: 22px;
+}
+.summary-cart__funds .funds-value__icon {
+  display: inline-block;
+  width: 8px;
+  height: 12px;
+  background-color: #ffcc00;
+  margin-left: 5px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px black;
+  width: 14px;
+  height: 18px;
+}
+.summary-cart__checkout {
+  display: flex;
+  flex-direction: column;
+  height: 320px;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-top: auto;
+  background-color: #545454;
+}
+.summary-cart__checkout .checkout-amount {
+  display: inherit;
+  font-family: "Roboto";
+  font-size: 11px;
+  color: #ffffff;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #d7d7d7;
+}
+.summary-cart__checkout .checkout-items {
+  overflow-y: auto;
+}
+.summary-cart__checkout .checkout-items .checkout-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-left: 7px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #787878;
+}
+.summary-cart__checkout .checkout-items .checkout-item:last-child {
+  border-bottom: none;
+}
+.summary-cart__checkout .checkout-items .checkout-item__label {
+  font-size: 11px;
+  color: #ffffff;
+  flex-basis: 70%;
+}
+.summary-cart__checkout .checkout-items .checkout-item__price {
+  font-size: 13px;
+  color: #ffffff;
+  font-family: "Roboto Light";
+}
+.summary-cart__checkout .purchase-button {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: auto;
+  padding: 10px 0;
+  border: none;
+  outline: 0;
+  background-color: #66cc33;
+  transition: background-color 0.3s;
+}
+.summary-cart__checkout .purchase-button:hover {
+  cursor: pointer;
+  background-color: #478f24;
+}
+.summary-cart__checkout .purchase-button__label {
+  font-family: "Roboto Medium";
+  font-size: 13px;
+  line-height: 1;
+  color: #ffffff;
+}
+.summary-cart__checkout .purchase-button__icon {
+  display: inline-block;
+  width: 8px;
+  height: 12px;
+  background-color: #ffcc00;
+  margin-left: 5px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px black;
+}

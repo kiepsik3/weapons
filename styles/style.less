@@ -1,0 +1,219 @@
+@import "./colors.less";
+@import "./fonts.less";
+
+.gold-icon() {
+    display: inline-block;
+    width: 8px;
+    height: 12px;
+    background-color: @color-yellow;
+    margin-left: 5px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px black;
+}
+
+.gold-icon-big() {
+    .gold-icon();
+    width: 14px;
+    height: 18px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "Roboto Light";
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.weapon-shop {
+    display: flex;
+    justify-content: space-between;
+    width: 880px;
+    height: 480px;
+    padding: 45px 50px 45px 40px;
+    box-sizing: border-box;
+    background-color: @color-light-grey;
+    align-self: center;
+}
+
+.shopping-cart {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-basis: 580px;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 132px;
+        height: 120px;
+        margin-right: 16px;
+        margin-bottom: 18px;
+        flex-basis: ~'calc(25% - 16px)';
+        background: @color-light-black;
+        &--in-cart {
+            .item-price, .item-price:hover {
+                background-color: @color-orange;
+            }
+        }
+        &--too-expensive {
+            .item-price, .item-price:hover {
+                background-color: @color-red;
+                cursor: not-allowed;
+            }
+        }
+        &--owned {
+            .item-price {
+                background-color: @color-white;
+                &__label {
+                    color: @color-light-black;
+                }
+                &:hover {
+                    background-color: @color-white;
+                    &__label {
+                    color: @color-light-black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.item-name {
+    font-size: 11px;
+    color: @color-white;
+    margin-top: 5px;
+}
+.item-new {
+    align-self: flex-start;
+    position: absolute;
+    font-family: "Roboto Medium";
+    font-size: 10px;
+    margin-top: 22px;
+    padding: 3px 7px;
+    background-color: @color-yellow;
+}
+.item-img {
+    margin-top: auto;
+}
+.item-price {
+    display: flex;
+    justify-content: center;
+    align-self: stretch;
+    margin-top: auto;
+    padding: 7px 0;
+    border: none;
+    outline: none;
+    background-color: @color-grey;
+    transition: background-color .3s;
+    &:hover {
+        cursor: pointer;
+        background: @color-dark-grey;
+    }
+    &__label {
+        font-size: 13px;
+        color: @color-white;
+        line-height: 1;                   
+    }
+    &__icon {
+        .gold-icon();
+    }
+}
+
+.summary-cart {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 185px;
+    &__funds {
+        text-align: right;
+        font-family: "Roboto";
+        .funds-label {
+            font-size: 12px;
+        }
+        .funds-value {
+            margin-top: 3px;
+            &__label {
+                font-size: 22px;
+            }
+            &__icon {
+                .gold-icon-big();
+            }
+        }
+    }
+
+    &__checkout {
+        display: flex;
+        flex-direction: column;
+        height: 320px;
+        padding: 8px;
+        box-sizing: border-box;
+        margin-top: auto;
+        background-color: @color-dark-grey;
+        .checkout-amount {
+            display: inherit;
+            font-family: "Roboto";
+            font-size: 11px;
+            color: @color-white;
+            padding-bottom: 5px;
+            border-bottom: 1px solid @color-light-grey;
+        }
+
+        .checkout-items {
+            overflow-y: auto;
+            .checkout-item {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-top: 14px;
+                padding-left: 7px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid @color-grey;
+                &:last-child {
+                    border-bottom: none;
+                }
+                &__label{
+                    font-size: 11px;
+                    color: @color-white;
+                    flex-basis: 70%;
+                }
+
+                &__price {
+                    font-size: 13px;
+                    color: @color-white;
+                    font-family: "Roboto Light";
+                }
+            }
+        }           
+
+        .purchase-button {
+            display: flex;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: auto;
+            padding: 10px 0;
+            border: none;
+            outline: 0;
+            background-color: @color-green;
+            transition: background-color .3s;
+            &:hover {
+                cursor: pointer;
+                background-color: @color-dark-green;
+            }
+            &__label {
+                font-family: "Roboto Medium";
+                font-size: 13px;
+                line-height: 1;
+                color: @color-white;
+            }
+
+            &__icon {
+                .gold-icon();
+            }
+        }
+    }
+}
+
