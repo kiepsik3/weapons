@@ -28,6 +28,8 @@ function numberWithoutSpaces(x) {
     return x.toString().replace(/ /g, '');
 }
 
+
+
 (function createWeapons() {
         weapons.forEach(key => {
         let singleItem = document.createElement("div");
@@ -116,6 +118,18 @@ function isTooExpensive() {
 };
 
 isTooExpensive();
+
+(function isNew() {
+    allItems.forEach(e => {
+        let itemNew = document.createElement("span");
+        itemNew.className = "item-new";
+        itemNew.textContent = "New";
+    
+        if([Math.floor(Math.random() * allItems.length)].length === Math.round(Math.random())) {
+            e.appendChild(itemNew);
+        }
+    })
+})();
 
 function purchase() {
     while (checkoutContainer.hasChildNodes()) {
