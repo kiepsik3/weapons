@@ -121,11 +121,10 @@ isTooExpensive();
 
 (function isNew() {
     allItems.forEach(e => {
-        let itemNew = document.createElement("span");
-        itemNew.className = "item-new";
-        itemNew.textContent = "New";
-    
-        if([Math.floor(Math.random() * allItems.length)].length === Math.round(Math.random())) {
+        if(Math.round(Math.random()) === 0) {
+            let itemNew = document.createElement("span");
+            itemNew.className = "item-new";
+            itemNew.textContent = "New";
             e.appendChild(itemNew);
         }
     })
